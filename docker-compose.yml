@@ -1,0 +1,27 @@
+services:
+  latest:
+    build:
+      args:
+        PHP_VERSION: ""
+    tty: true
+    volumes:
+      - .:/app:delegated
+    networks: []
+  php83:
+    build:
+      args:
+        PHP_VERSION: "8.3-"
+    extends:
+      service: latest
+  php84:
+    build:
+      args:
+        PHP_VERSION: "8.4-"
+    extends:
+      service: latest
+  php85:
+    build:
+      args:
+        PHP_VERSION: "8.5-"
+    extends:
+      service: latest

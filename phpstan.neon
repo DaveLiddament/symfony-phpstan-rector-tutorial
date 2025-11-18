@@ -1,0 +1,9 @@
+parameters:
+    level: max
+    paths:
+    - src
+    - tests
+    excludePaths:
+    - src/Rector/Exercise01/*
+    - src/Rector/Exercise02/*
+    - src/Rector/Exercise03/*

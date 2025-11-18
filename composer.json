@@ -1,0 +1,40 @@
+{
+    "name": "dave-liddament/symfony-phpstan-rector-tutorial",
+    "description": "Supporting package for the SymfonyCon PHPStan and Rector custom rules tutorial",
+    "type": "project",
+    "license": "MIT",
+    "autoload": {
+        "psr-4": {
+            "App\\": "src/"
+        }
+    },
+    "autoload-dev": {
+        "psr-4": {
+            "App\\Test\\": "tests/"
+        }
+    },
+    "authors": [
+        {
+            "name": "Dave Liddament",
+            "email": "dave@lampbristol.com"
+        }
+    ],
+    "require": {
+        "php": "8.3.*|8.4.*|8.5.*"
+    },
+    "require-dev": {
+        "phpstan/phpstan": "^2.1.32",
+        "phpunit/phpunit": "^12.4.4",
+        "rector/rector": "^2.2.8"
+    },
+    "scripts": {
+        "composer-validate": "composer validate",
+        "phpstan": "phpstan analyse",
+        "test": "phpunit",
+        "all-checks": [
+            "@composer-validate",
+            "@phpstan",
+            "@test"
+        ]
+    }
+}
