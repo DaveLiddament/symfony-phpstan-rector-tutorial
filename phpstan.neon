@@ -3,7 +3,74 @@ parameters:
     paths:
     - src
     - tests
+    - utils/Phpstan
     excludePaths:
+    - utils/Phpstan/*/Fixtures/*
     - src/Rector/Exercise01/*
     - src/Rector/Exercise02/*
     - src/Rector/Exercise03/*
+
+services:
+-
+    class: Utils\Phpstan\Rules\DontCallPrintRule
+    tags:
+    - phpstan.rules.rule
+
+-
+    class: Utils\Phpstan\Rules\DontCallDieRule
+    tags:
+    - phpstan.rules.rule
+
+-
+    class: Utils\Phpstan\Rules\DontCallExitRule
+    tags:
+    - phpstan.rules.rule
+
+-
+    class: Utils\Phpstan\Rules\DontCallGotoRule
+    tags:
+    - phpstan.rules.rule
+
+-
+    class: Utils\Phpstan\Rules\DontCallVarDumpRule
+    tags:
+    - phpstan.rules.rule
+
+-
+    class: Utils\Phpstan\Rules\DontCallCompactRule
+    tags:
+    - phpstan.rules.rule
+
+-
+     class: Utils\Phpstan\Rules\DontAllowGetSuperGlobalRule
+     tags:
+     - phpstan.rules.rule
+
+-
+     class: Utils\Phpstan\Rules\PersonSetIdOnlyCalledFromTestCodeRule
+     tags:
+     - phpstan.rules.rule
+
+-
+     class: Utils\Phpstan\Rules\PersonSetIdOnlyCalledFromTestCodeRule2
+     tags:
+     - phpstan.rules.rule
+
+-
+    class: Utils\Phpstan\Rules\DisallowFunctionRule
+    tags:
+    - phpstan.rules.rule
+    arguments:
+      disallowedFunction: 'myFunction'
+
+-
+    class: Utils\Phpstan\Rules\DisallowFunctionRule
+    tags:
+    - phpstan.rules.rule
+    arguments:
+      disallowedFunction: 'var_dump'
+
+-
+    class: Utils\Phpstan\Rules\RouteNameRule
+    tags:
+    - phpstan.rules.rule

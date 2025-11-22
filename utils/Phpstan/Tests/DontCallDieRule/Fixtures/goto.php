@@ -1,0 +1,5 @@
+<?php
+
+foo:
+
+goto foo;

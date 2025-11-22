@@ -15,6 +15,12 @@
         <testsuite name="default">
             <directory>tests</directory>
         </testsuite>
+        <testsuite name="phpstan">
+            <directory>utils/Phpstan/Tests</directory>
+        </testsuite>
+        <testsuite name="rector">
+            <directory>utils/rector/tests</directory>
+        </testsuite>
     </testsuites>
 
     <source ignoreIndirectDeprecations="true" restrictNotices="true" restrictWarnings="true">
